@@ -29,7 +29,7 @@ const TouristInfoCards = () => (
     <div className="card">
       <img
         alt="London"
-        src="https://en.wikipedia.org/wiki/London_Eye#/media/File:London-Eye-2009.jpg"
+        src="https://upload.wikimedia.org/wikipedia/commons/d/d6/London-Eye-2009.JPG"
         className="card-img-top"
       />
       <div className="card-body">
