@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: rosybrown;
 }
 
 .App-logo {
@@ -42,7 +43,8 @@
 }
 
 tr {
-  color: #5b5757;
+  color: black;
+  /* color: #5b5757; */
 }
 
 .results {
