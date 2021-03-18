@@ -1,3 +1,4 @@
+import moment from "moment";
 import React from "react";
 import Bookings from "./Bookings";
 import Search from "./Search";
@@ -29,6 +30,9 @@ const SearchResults = ({ result }) => (
           <td>{booking.roomId}</td>
           <td>{booking.checkInDate}</td>
           <td>{booking.checkOutDate}</td>
+          <td>
+            {moment(booking.checkOutDate).diff(booking.checkInDate, "days")}
+          </td>
         </tr>
       ))}
     </tbody>

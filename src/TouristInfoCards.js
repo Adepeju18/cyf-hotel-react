@@ -5,7 +5,7 @@ const TouristInfoCards = () => (
     <div className="card">
       <img
         alt="Glasgow"
-        src="https://www.istockphoto.com/photo/wide-angle-aerial-view-of-the-river-clyde-and-landmarks-glasgow-scotland-uk-gm1205363274-347201872"
+        src="https://upload.wikimedia.org/wikipedia/commons/7/74/General_internal_view._Kelvingrove_Art_Gallery_and_Museum%2C_Glasgow%2C_Scotland..JPG"
         className="card-img-top"
       />
       <div className="card-body">
@@ -17,7 +17,7 @@ const TouristInfoCards = () => (
     <div className="card">
       <img
         alt="Manchester"
-        src="https://www.manchestereveningnews.co.uk/whats-on/whats-on-news/free-things-to-do-manchester-12474839"
+        src="https://i2-prod.manchestereveningnews.co.uk/incoming/article12455363.ece/ALTERNATES/s810/JS77642070-1.jpg"
         className="card-img-top"
       />
       <div className="card-body">
