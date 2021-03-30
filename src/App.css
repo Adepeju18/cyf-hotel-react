@@ -66,6 +66,10 @@ tr {
   margin-top: 30px;
   margin-bottom: 50px;
 }
+.highlight {
+  background-color: chartreuse;
+  color: red;
+}
 
 .App-footer {
   background-color: black;

@@ -1,6 +1,7 @@
 import moment from "moment";
 import React from "react";
 import Bookings from "./Bookings";
+import RowHighlighted from "./RowHighlighted";
 import Search from "./Search";
 
 const SearchResults = ({ result }) => (
@@ -21,19 +22,21 @@ const SearchResults = ({ result }) => (
     <tbody>
       {result.map((booking, index) => (
         // <tr>
-        <tr key={index}>
-          <th scope="row">{booking.id}</th>
-          <td>{booking.title}</td>
-          <td>{booking.firstName}</td>
-          <td>{booking.surname}</td>
-          <td>{booking.email}</td>
-          <td>{booking.roomId}</td>
-          <td>{booking.checkInDate}</td>
-          <td>{booking.checkOutDate}</td>
-          <td>
-            {moment(booking.checkOutDate).diff(booking.checkInDate, "days")}
-          </td>
-        </tr>
+        // <tr key={index}>
+        //   <th scope="row">{booking.id}</th>
+        //   <td>{booking.title}</td>
+        //   <td>{booking.firstName}</td>
+        //   <td>{booking.surname}</td>
+        //   <td>{booking.email}</td>
+        //   <td>{booking.roomId}</td>
+        //   <td>{booking.checkInDate}</td>
+        //   <td>{booking.checkOutDate}</td>
+        //   <td>{booking.NumberOfNights}</td>
+        //   <td>
+        //     {moment(booking.checkOutDate).diff(booking.checkInDate, "days")}
+        //   </td>
+        // </tr>
+        <RowHighlighted props={booking} />
       ))}
     </tbody>
   </table>
