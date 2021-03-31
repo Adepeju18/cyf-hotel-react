@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const RowHighlighted = ({ props }) => {
+const RowHighlighted = ({ props, setProfileId }) => {
   console.log(props);
   const [highlight, setHighlight] = useState("false");
 
+  const handleShowProfile = () => {
+    setProfileId(props.id);
+  };
+
   return (
     <tr
+      key={props.id}
       onClick={() => setHighlight(!highlight)}
       className={highlight ? "highlight" : "tr"}
     >
@@ -20,6 +25,9 @@ const RowHighlighted = ({ props }) => {
       <td>{props.checkOutDate}</td>
       <td>{moment(props.checkOutDate).diff(props.checkInDate, "days")}</td>
       {/* <td>{props.booking.NumberOfNights}</td> */}
+      <td>
+        <button onClick={handleShowProfile}>Show profile</button>
+      </td>
     </tr>
   );
 };

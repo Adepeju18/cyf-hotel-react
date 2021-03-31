@@ -6,6 +6,7 @@ import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
+import CustomerProfile from "./CustomerProfile";
 
 const App = () => {
   const footerElem = [
@@ -20,6 +21,7 @@ const App = () => {
       <Bookings />
       <Restaurant />
       <Footer footerItems={footerElem} />
+      {/* <CustomerProfile /> */}
     </div>
   );
 };
