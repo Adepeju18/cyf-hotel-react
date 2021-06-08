@@ -19,9 +19,14 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
-      <Restaurant />
-      <Footer footerItems={footerElem} />
-      {/* <CustomerProfile /> */}
+      <div>
+        <Restaurant />
+      </div>
+      <div>
+        {/* <Footer footerItems={footerElem} /> */}
+        <Footer footerItems={footerElem} />
+      </div>
+      {/* <CustomerProfile />  */}
     </div>
   );
 };

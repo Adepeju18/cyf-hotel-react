@@ -7,19 +7,24 @@ import FakeBookings from "./data/fakeBookings.json";
 // const [bookings, setBookings]= useState(FakeBookings);
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [filteredBookings, setFilteredBookings] = useState(bookings);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/`)
+    fetch(`https://cyf-react.glitch.me/delayed`)
       .then(response => {
-        if (!response.ok) {
+        if (response.ok) {
+          setError(false);
+          return response.json();
+        } else {
           setError(true);
+          return bookings;
         }
-        return response.json();
       })
       .then(data => {
         setBookings(data);
-        console.log("the Bookings", bookings);
+        setFilteredBookings(data);
+        console.log("the Bookings", data);
         setLoading(false);
       })
       .catch(console.error);
@@ -27,16 +32,15 @@ const Bookings = () => {
 
   console.log(FakeBookings);
   const search = searchVal => {
-    if (searchVal) {
-      console.log("Bookings", bookings);
-      console.info("TO DO!", searchVal);
-      const filteredSearch = bookings.filter(
-        booking =>
-          booking.firstName.toLowercase().includes(searchVal.toLowercase()) ||
-          booking.surname.toLowercase().includes(searchVal.toLowercase())
-      );
-      setBookings(filteredSearch);
-    }
+    console.log("Bookings", bookings);
+    console.info("TO DO!", searchVal);
+    const filteredSearch = bookings.filter(
+      booking =>
+        booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+        booking.surname.toLowerCase().includes(searchVal.toLowerCase())
+    );
+    console.log(filteredSearch);
+    setFilteredBookings(filteredSearch);
   };
 
   return error ? (
@@ -48,12 +52,11 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         {/* <SearchResults results/> */}
-        <SearchResults result={bookings} setBookings={setBookings} />
-        <Search props={search} />
+        <SearchResults result={filteredBookings} setBookings={setBookings} />
+        {/* <Search props={search} /> */}
         {/* <SearchResults result={FakeBookings} /> */}
       </div>
     </div>
   );
 };
-
 export default Bookings;

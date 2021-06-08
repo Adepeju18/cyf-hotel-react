@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Search = ({ props }) => {
+const Search = ({ search }) => {
   const [searchInput, setSearchInput] = useState("");
 
   function handleChange(event) {
@@ -10,7 +10,7 @@ const Search = ({ props }) => {
   const handleSubmit = event => {
     event.preventDefault();
     if (searchInput) {
-      // Search(searchInput);
+      search(searchInput);
       setSearchInput("");
     }
   };

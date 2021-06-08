@@ -8,6 +8,8 @@ import CustomerProfile from "./CustomerProfile";
 const SearchResults = ({ result }) => {
   const [profileId, setProfileId] = useState();
 
+  console.log(result);
+
   return (
     <div>
       <table className="table">
